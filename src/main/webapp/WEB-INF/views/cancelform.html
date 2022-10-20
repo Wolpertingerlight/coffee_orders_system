@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Do you want to cancel order? Tell why you do it:</p>
+<form th:method="post"  th:object="${cancel}" th:action="@{/cancel(uuid=${uuid})}" >
+    <p th:text="${uuid}"></p>
+    <input name="comment" type="text" id="comment"/>
+    <input type="submit" value="Cancel Order">
+</form>
+</body>
+</html>
